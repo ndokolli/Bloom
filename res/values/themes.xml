@@ -1,0 +1,13 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Theme.Bloom" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/bloom_pink</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorSecondary">@color/bloom_purple</item>
+        <item name="android:windowBackground">@color/bloom_bg</item>
+        <item name="android:statusBarColor" tools:targetApi="21">@color/bloom_bg</item>
+        <item name="android:navigationBarColor">@color/bloom_bg</item>
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+</resources>

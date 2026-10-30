@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="bloom_pink">#FF4FA3</color>
+    <color name="bloom_purple">#8B5CF6</color>
+    <color name="bloom_mint">#3ED598</color>
+    <color name="bloom_sunny">#FFC53D</color>
+    <color name="bloom_coral">#FF7A59</color>
+    <color name="bloom_bg">#F8F3FF</color>
+    <color name="bloom_card">#FFFFFF</color>
+    <color name="bloom_text">#1F1235</color>
+    <color name="bloom_muted">#7C7391</color>
+    <color name="bloom_lilac">#F6EBFA</color>
+    <color name="bloom_soft_pink">#FFEAF6</color>
+    <color name="bloom_pill">#F7EFF9</color>
+    <color name="bloom_white">#FFFFFFFF</color>
+    <color name="bloom_nav_active">#FF4FA3</color>
+    <color name="bloom_nav_inactive">#7C7391</color>
+    <color name="bloom_gradient_start">#FF4FA3</color>
+    <color name="bloom_gradient_end">#8B5CF6</color>
+</resources>

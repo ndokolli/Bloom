@@ -1,0 +1,650 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bloom_bg"
+    android:clipToPadding="false"
+    android:fillViewport="true"
+    tools:context=".MeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="22dp">
+
+
+        <TextView
+            android:id="@+id/textMeCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:letterSpacing=".12"
+            android:text="@string/label_profile"
+            android:textColor="@color/bloom_muted"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textMeHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="@string/profile_heading"
+            android:textColor="@color/bloom_text"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textMeCategory" />
+
+        <TextView
+            android:id="@+id/textMeSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="sans-serif"
+            android:text="@string/me_subtitle"
+            android:textColor="@color/bloom_muted"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textMeHeading" />
+
+        <ImageView
+            android:id="@+id/imageHeartHeader"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="8dp"
+            android:src="@drawable/ic_heart"
+            app:layout_constraintBottom_toBottomOf="@id/textMeSubtitle"
+            app:layout_constraintStart_toEndOf="@id/textMeSubtitle"
+            app:layout_constraintTop_toTopOf="@id/textMeSubtitle"
+            android:contentDescription="@null" />
+
+        <ImageView
+            android:id="@+id/imageMeBear"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@drawable/teddy_bear"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/cardPersonalInfo"
+            android:layout_marginTop="-55dp"
+            android:layout_marginEnd="10dp"
+            android:elevation="12dp"
+            android:contentDescription="@string/bibo_bear_description" />
+
+        <TextView
+            android:id="@+id/textBearBubble"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_speech_bubble"
+            android:paddingHorizontal="14dp"
+            android:paddingVertical="6dp"
+            android:text="@string/bibo_quote_me"
+            android:textColor="@color/bloom_text"
+            android:textSize="12sp"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@id/imageMeBear"
+            app:layout_constraintEnd_toStartOf="@id/imageMeBear"
+            android:layout_marginBottom="-20dp"
+            android:layout_marginEnd="-10dp"
+            android:elevation="13dp"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardPersonalInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            app:cardBackgroundColor="@color/bloom_card"
+            app:cardCornerRadius="32dp"
+            app:cardElevation="6dp"
+            app:layout_constraintTop_toBottomOf="@id/textMeSubtitle">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/textUserAvatar"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@drawable/bg_icon_circle"
+                        android:gravity="center"
+                        android:text="@string/emoji_cherry_blossom"
+                        android:textSize="26sp"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/textUserAvatar"
+                        app:layout_constraintEnd_toStartOf="@id/buttonEditProfile"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/personal_info_title"
+                            android:textColor="@color/bloom_text"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/personal_info_subtitle"
+                            android:textColor="@color/bloom_muted"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/buttonEditProfile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="32dp"
+                        android:background="@drawable/bg_white_pill"
+                        android:drawableStart="@drawable/ic_edit"
+                        android:drawablePadding="4dp"
+                        android:paddingHorizontal="12dp"
+                        android:text="@string/edit"
+                        android:textAllCaps="false"
+                        android:textColor="@color/bloom_pink"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:elevation="2dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:columnCount="2"
+                    android:alignmentMode="alignMargins"
+                    android:columnOrderPreserved="false">
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:layout_marginEnd="6dp"
+                        android:background="@drawable/bg_input_field"
+                        android:gravity="center_vertical"
+                        android:padding="10dp"
+                        android:baselineAligned="false">
+                        <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_person" app:tint="@color/bloom_muted" android:contentDescription="@null"/>
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/label_name" android:textColor="@color/bloom_muted" android:textSize="11sp"/>
+                            <TextView android:id="@+id/textNameVal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/placeholder_name" android:textColor="@color/bloom_text" android:textSize="14sp" android:textStyle="bold"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:layout_marginStart="6dp"
+                        android:background="@drawable/bg_input_field"
+                        android:gravity="center_vertical"
+                        android:padding="10dp"
+                        android:baselineAligned="false">
+                        <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_calendar" app:tint="@color/bloom_muted" android:contentDescription="@null"/>
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/label_age" android:textColor="@color/bloom_muted" android:textSize="11sp"/>
+                            <TextView android:id="@+id/textAgeVal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/placeholder_age" android:textColor="@color/bloom_text" android:textSize="14sp" android:textStyle="bold"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="6dp"
+                        android:background="@drawable/bg_input_field"
+                        android:gravity="center_vertical"
+                        android:padding="10dp"
+                        android:baselineAligned="false">
+                        <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_ruler" app:tint="@color/bloom_muted" android:contentDescription="@null"/>
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/label_height" android:textColor="@color/bloom_muted" android:textSize="11sp"/>
+                            <TextView android:id="@+id/textHeightVal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/placeholder_height" android:textColor="@color/bloom_text" android:textSize="14sp" android:textStyle="bold"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginStart="6dp"
+                        android:background="@drawable/bg_input_field"
+                        android:gravity="center_vertical"
+                        android:padding="10dp"
+                        android:baselineAligned="false">
+                        <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_weight" app:tint="@color/bloom_muted" android:contentDescription="@null"/>
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="8dp" android:orientation="vertical">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/label_weight" android:textColor="@color/bloom_muted" android:textSize="11sp"/>
+                            <TextView android:id="@+id/textWeightVal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/placeholder_weight" android:textColor="@color/bloom_text" android:textSize="14sp" android:textStyle="bold"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </GridLayout>
+
+                <Button
+                    android:id="@+id/buttonSaveProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/bg_gradient_card"
+                    android:text="@string/save_profile"
+                    android:textColor="@color/bloom_white"
+                    android:textStyle="bold"
+                    style="?android:attr/borderlessButtonStyle" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardFriendsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:cardBackgroundColor="@color/bloom_card"
+            app:cardCornerRadius="32dp"
+            app:cardElevation="6dp"
+            app:layout_constraintTop_toBottomOf="@id/cardPersonalInfo">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <View
+                        android:id="@+id/iconBgChallenges"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@drawable/bg_icon_circle"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+
+                    <ImageView
+                        android:id="@+id/imagePeopleIcon"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_people"
+                        app:tint="@color/bloom_purple"
+                        android:contentDescription="@null"
+                        app:layout_constraintStart_toStartOf="@id/iconBgChallenges"
+                        app:layout_constraintEnd_toEndOf="@id/iconBgChallenges"
+                        app:layout_constraintTop_toTopOf="@id/iconBgChallenges"
+                        app:layout_constraintBottom_toBottomOf="@id/iconBgChallenges" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginEnd="12dp"
+                        android:orientation="vertical"
+                        app:layout_constraintStart_toEndOf="@id/iconBgChallenges"
+                        app:layout_constraintEnd_toStartOf="@id/buttonInviteFriends"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/label_friends_challenges" android:textColor="@color/bloom_text" android:textSize="18sp" android:textStyle="bold" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/friends_subtitle" android:textColor="@color/bloom_muted" android:textSize="12sp" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/buttonInviteFriends"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:background="@drawable/bg_gradient_card"
+                        android:drawableStart="@drawable/ic_person_add"
+                        android:drawablePadding="6dp"
+                        android:paddingHorizontal="12dp"
+                        android:text="@string/invite_friends"
+                        android:textAllCaps="false"
+                        android:textColor="@color/bloom_white"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        style="?android:attr/borderlessButtonStyle"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:baselineAligned="false">
+
+
+                    <LinearLayout
+                        android:id="@+id/layoutAddFriendMe"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?attr/selectableItemBackground">
+                        <View android:layout_width="48dp" android:layout_height="48dp" android:background="@drawable/bg_circle_dashed" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/symbol_plus" android:layout_marginTop="-40dp" android:textColor="@color/bloom_pink" android:textSize="22sp" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:text="@string/add_friend" android:textColor="@color/bloom_muted" android:textSize="11sp" />
+                    </LinearLayout>
+
+
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="12dp" android:orientation="horizontal">
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:orientation="vertical">
+                            <View android:layout_width="48dp" android:layout_height="48dp" android:background="@drawable/bg_icon_circle" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="@string/friends_sara" android:textColor="@color/bloom_text" android:textSize="11sp" />
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:gravity="center" android:orientation="vertical">
+                            <View android:layout_width="48dp" android:layout_height="48dp" android:background="@drawable/bg_icon_circle" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="@string/friends_ema" android:textColor="@color/bloom_text" android:textSize="11sp" />
+                        </LinearLayout>
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:gravity="center" android:orientation="vertical">
+                            <View android:layout_width="48dp" android:layout_height="48dp" android:background="@drawable/bg_icon_circle" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="@string/friends_leo" android:textColor="@color/bloom_text" android:textSize="11sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout android:id="@+id/layoutSeeAllFriendsMe" android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="center" android:orientation="vertical" android:clickable="true" android:focusable="true">
+                        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_arrow_right" app:tint="@color/bloom_text" android:contentDescription="@null"/>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/see_all_label" android:textColor="@color/bloom_muted" android:textSize="11sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/bloom_lilac" android:layout_marginTop="20dp" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:baselineAligned="false">
+
+
+                    <LinearLayout
+                        android:id="@+id/statFriendsMe"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:clickable="true"
+                        android:focusable="true">
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_people"
+                            app:tint="@color/bloom_text"
+                            android:contentDescription="@null" />
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:orientation="vertical">
+                            <TextView
+                                android:id="@+id/textFriendsCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/friends_count"
+                                android:textColor="@color/bloom_text"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/label_friends"
+                                android:textColor="@color/bloom_muted"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="32dp"
+                        android:background="@color/bloom_lilac" />
+
+
+                    <LinearLayout
+                        android:id="@+id/statChallengesMe"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="16dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:clickable="true"
+                        android:focusable="true">
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_trophy"
+                            app:tint="@color/bloom_text"
+                            android:contentDescription="@null" />
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:orientation="vertical">
+                            <TextView
+                                android:id="@+id/textChallengesCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/challenges_count"
+                                android:textColor="@color/bloom_text"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/label_challenges"
+                                android:textColor="@color/bloom_muted"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="32dp"
+                        android:background="@color/bloom_lilac" />
+
+
+                    <LinearLayout
+                        android:id="@+id/statAchievementsMe"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.3"
+                        android:layout_marginStart="16dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:clickable="true"
+                        android:focusable="true">
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_stats"
+                            app:tint="@color/bloom_text"
+                            android:contentDescription="@null" />
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:orientation="vertical">
+                            <TextView
+                                android:id="@+id/textAchievementsCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/achievements_count"
+                                android:textColor="@color/bloom_text"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/label_achievements"
+                                android:textColor="@color/bloom_muted"
+                                android:textSize="11sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/bloom_lilac" android:layout_marginTop="16dp" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp">
+                    <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:text="@string/active_challenges" android:textColor="@color/bloom_text" android:textSize="18sp" android:textStyle="bold" app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/cardStepsMe"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/bg_input_field"
+                    android:padding="12dp"
+                    android:gravity="center_vertical"
+                    android:baselineAligned="false"
+                    android:clickable="true"
+                    android:focusable="true">
+                    <View android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/bg_icon_circle" />
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp" android:layout_marginStart="-30dp" android:src="@drawable/ic_shoe" app:tint="@color/bloom_pink" android:contentDescription="@null" />
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="22dp" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/challenge_steps_title" android:textColor="@color/bloom_text" android:textStyle="bold" android:textSize="14sp" />
+                        <TextView android:id="@+id/textStepsSubMe" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/challenge_steps_sub" android:textColor="@color/bloom_muted" android:textSize="11sp" />
+                        <ProgressBar android:id="@+id/progressStepsMe" style="?android:attr/progressBarStyleHorizontal" android:layout_width="match_parent" android:layout_height="6dp" android:layout_marginTop="8dp" android:max="5000" android:progress="3240" android:progressTint="@color/bloom_pink" android:progressBackgroundTint="@color/bloom_soft_pink" />
+                    </LinearLayout>
+                    <ImageView android:layout_width="24dp" android:layout_height="24dp" android:layout_marginStart="8dp" android:src="@drawable/ic_arrow_right" app:tint="@color/bloom_muted" android:contentDescription="@null" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/cardWaterMe"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/bg_input_field"
+                    android:padding="12dp"
+                    android:gravity="center_vertical"
+                    android:baselineAligned="false"
+                    android:clickable="true"
+                    android:focusable="true">
+                    <View android:layout_width="40dp" android:layout_height="40dp" android:background="@drawable/bg_icon_circle" android:backgroundTint="#E3F2FD" />
+                    <ImageView android:layout_width="20dp" android:layout_height="20dp" android:layout_marginStart="-30dp" android:src="@drawable/ic_water" app:tint="#2196F3" android:contentDescription="@null" />
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:layout_marginStart="22dp" android:orientation="vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/challenge_water_title" android:textColor="@color/bloom_text" android:textStyle="bold" android:textSize="14sp" />
+                        <TextView android:id="@+id/textWaterSubMe" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/challenge_water_sub" android:textColor="@color/bloom_muted" android:textSize="11sp" />
+                        <LinearLayout android:id="@+id/layoutWaterDotsMe" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:orientation="horizontal" android:baselineAligned="false">
+                            <View android:layout_width="8dp" android:layout_height="8dp" android:background="@drawable/bg_circle_outline" />
+                            <View android:layout_width="8dp" android:layout_height="8dp" android:layout_marginStart="4dp" android:background="@drawable/bg_circle_outline" />
+                            <View android:layout_width="8dp" android:layout_height="8dp" android:layout_marginStart="4dp" android:background="@drawable/bg_circle_outline" />
+                            <View android:layout_width="8dp" android:layout_height="8dp" android:layout_marginStart="4dp" android:background="@drawable/bg_circle_outline" />
+                            <View android:layout_width="8dp" android:layout_height="8dp" android:layout_marginStart="4dp" android:background="@drawable/bg_circle_outline" />
+                            <View android:layout_width="8dp" android:layout_height="8dp" android:layout_marginStart="4dp" android:background="@drawable/bg_circle_outline" />
+                            <View android:layout_width="8dp" android:layout_height="8dp" android:layout_marginStart="4dp" android:background="@drawable/bg_circle_outline" />
+                            <View android:layout_width="8dp" android:layout_height="8dp" android:layout_marginStart="4dp" android:background="@drawable/bg_circle_outline" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <ImageView android:layout_width="24dp" android:layout_height="24dp" android:layout_marginStart="8dp" android:src="@drawable/ic_arrow_right" app:tint="@color/bloom_muted" android:contentDescription="@null" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/buttonBrowseChallenges"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/bg_soft_pill"
+                    android:text="@string/browse_challenges_arrow"
+                    android:textAllCaps="false"
+                    android:textColor="@color/bloom_text"
+                    android:textStyle="bold"
+                    style="?android:attr/borderlessButtonStyle" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardBottomQuote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:cardBackgroundColor="@color/bloom_lilac"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="0dp"
+            app:layout_constraintTop_toBottomOf="@id/cardFriendsContainer">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:gravity="center" android:orientation="horizontal" android:padding="16dp" android:baselineAligned="false">
+                <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_sprout" android:contentDescription="@null" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="12dp" android:text="@string/bottom_quote" android:textColor="@color/bloom_text" android:textStyle="italic" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/buttonSignOut"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/sign_out"
+            android:textColor="@color/bloom_pink"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardBottomQuote" />
+
+        <Button
+            android:id="@+id/buttonDeleteInfo"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:layout_marginBottom="110dp"
+            android:text="@string/delete_all_info"
+            android:textColor="@color/bloom_muted"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/buttonSignOut" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
